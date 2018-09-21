@@ -8,9 +8,14 @@
     "react-dom": "^16.5.2",
     "react-scripts": "1.1.5"
   },
+  "devDependencies": {
+    "sw-precache": "^5.2.1"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
+    "serve": "serve -s build",
+    "comment": "build && copy service-worker.js to build/service-worker && serve",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
